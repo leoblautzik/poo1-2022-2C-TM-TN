@@ -84,7 +84,6 @@ public class Guia1Arreglos {
 		
 		mostrarMatriz(c);
 		
-
 	}
 
 	private static void mostrarMatriz(int[][] c) {

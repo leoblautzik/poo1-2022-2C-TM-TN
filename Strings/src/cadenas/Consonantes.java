@@ -6,7 +6,7 @@ public class Consonantes {
 
 		String sinVocales = str;
 
-		String vocales = "aeiouAEIOUáéíóúÁÉÍÓÚ";
+		String vocales = "aeiouAEIOUáéíóúÁÉÍÓÚäëïöüÄËÏÖÜ";
 
 		for (int i = 0; i < vocales.length(); i++) {
 			Character vocal = vocales.charAt(i);
