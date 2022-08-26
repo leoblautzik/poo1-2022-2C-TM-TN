@@ -39,6 +39,9 @@ public class Inversora {
 		System.out.println(esPalindromo("Neuquen"));
 		// System.out.println(esPalindromo("Neuquén"));
 		System.out.println(encriptar("CHIMPUM",2));
+		
+		int c [] = new int[0];
+		System.out.println(c);
 	}
 
 }

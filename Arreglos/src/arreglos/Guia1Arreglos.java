@@ -44,7 +44,7 @@ public class Guia1Arreglos {
 		return resultado;
 	}
 
-	private static void mostrarArreglo(int[] a) {
+        public static void mostrarArreglo(int[] a) {
 		System.out.print("{");
 		for (int i = 0; i < a.length - 1; i++)
 			System.out.print(a[i] + ",");
