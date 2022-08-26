@@ -2,7 +2,7 @@ package arreglos;
 
 import java.util.Arrays;
 
-public class Guia1Arreglos {
+public class Arreglos {
 
 	boolean estaOrdenado(int v[]) {
 
@@ -40,19 +40,22 @@ public class Guia1Arreglos {
 		for (int i = 0; i < tam; i++)
 			for (int j = 0; j < tam; j++)
 				resultado[i][j] = a[i][j] + b[i][j];
-		
+
 		return resultado;
 	}
 
-        public static void mostrarArreglo(int[] a) {
-		System.out.print("{");
-		for (int i = 0; i < a.length - 1; i++)
-			System.out.print(a[i] + ",");
-		System.out.println(a[a.length - 1] + "}");
+	public static void mostrarArreglo(int[] a) {
+		if (a.length > 0) {
+			System.out.print("{");
+			for (int i = 0; i < a.length - 1; i++)
+				System.out.print(a[i] + ",");
+			System.out.println(a[a.length - 1] + "}");
+		}
+		else System.out.println("array nulo");
 	}
 
 	public static void main(String[] args) {
-		Guia1Arreglos ga1 = new Guia1Arreglos();
+		Arreglos ga1 = new Arreglos();
 		int v1[] = { 0, 1, 2, 3, 4, 5, 6, 7 };
 		int v2[] = { 7, 6, 5, 4, 3, 2, 1, 0 };
 		int v3[] = { -7, -6, -5, -4, -3, -2, -1, 0 };
@@ -76,18 +79,18 @@ public class Guia1Arreglos {
 		mostrarArreglo(a);
 
 		System.out.println(ga1.sumar(a));
-		
-		int [][] m1 = { {1,1,1}, {1,1,1}, {1,1,1} };
-		int [][] m2 = { {2,2,2}, {2,2,2}, {2,2,2} };
-		
-		int [][] c = ga1.sumarMatricesCuadradas(m1, m2);
-		
+
+		int[][] m1 = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
+		int[][] m2 = { { 2, 2, 2 }, { 2, 2, 2 }, { 2, 2, 2 } };
+
+		int[][] c = ga1.sumarMatricesCuadradas(m1, m2);
+
 		mostrarMatriz(c);
-		
+
 	}
 
 	private static void mostrarMatriz(int[][] c) {
-		for(int[] cadaFila : c)
+		for (int[] cadaFila : c)
 			mostrarArreglo(cadaFila);
 	}
 
