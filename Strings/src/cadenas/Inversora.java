@@ -2,19 +2,26 @@ package cadenas;
 
 public class Inversora {
 
-	static String invertirCadena(String c) {
+	static String invertirCadena(String cadena) {
 		String invertida = "";
-		for (int i = c.length() - 1; i >= 0; i--)
-			invertida += c.charAt(i);
+		for (int i = cadena.length() - 1; i >= 0; i--)
+			invertida += cadena.charAt(i);
 		return invertida;
 	}
 
 	static boolean esPalindromo(String p) {
-		String originalEnMinuscula = p.toLowerCase();
-		String originalSinEspacios = originalEnMinuscula.replace(" ", "");
-		//System.out.println(originalSinEspacios);
-		String invertidaEnMinuscula = invertirCadena(originalSinEspacios);
-		return originalSinEspacios.equals(invertidaEnMinuscula);
+		String enMinuscula = p.toLowerCase();
+		String sinAcentos = enMinuscula.replace('á', 'a');
+		sinAcentos = sinAcentos.replace('é', 'e');
+		sinAcentos = sinAcentos.replace('í', 'i');
+		sinAcentos = sinAcentos.replace('ó', 'o');
+		sinAcentos = sinAcentos.replace('ú', 'u');
+		String sinEspacios = sinAcentos.replace(" ", "");
+		//System.out.println(sinEspacios);
+		String invertida = invertirCadena(sinEspacios);
+			
+		return sinEspacios.equals(invertida);
+
 	}
 
 	static String encriptar(String s, int c) {
@@ -34,14 +41,14 @@ public class Inversora {
 
 	public static void main(String[] args) {
 
-		System.out.println(invertirCadena("Hola"));
-		System.out.println(esPalindromo("neuquen"));
-		System.out.println(esPalindromo("Neuquen"));
-		// System.out.println(esPalindromo("Neuquén"));
+		System.out.println(Inversora.invertirCadena("Hola"));
+		System.out.println(esPalindromo("neuquen"));// bien
+		System.out.println(esPalindromo("Neuquen"));// mal
+		System.out.println(esPalindromo("Neuquén"));// mal
+		System.out.println(esPalindromo("Dábale arroz a la zorra el abad"));
 		System.out.println(encriptar("CHIMPUM",2));
-		
-		int c [] = new int[0];
-		System.out.println(c);
+		System.out.println(encriptar("SUPERCALIFRAGILISTICOESPIALIDOSO",27));
+
 	}
 
 }
