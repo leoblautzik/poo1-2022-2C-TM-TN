@@ -38,7 +38,7 @@ public class Intercaladora {
 		int[] nulo = {};
 		int[] deUno = { 2 };
 		
-		int[] c = inter.intercalar(x, nulo);
+		int[] c = inter.intercalar(nulo, nulo);
 		Arreglos.mostrarArreglo(c);
 
 	}
