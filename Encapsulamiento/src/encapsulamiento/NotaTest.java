@@ -32,7 +32,7 @@ public class NotaTest {
 	
 	@Test(expected=Error.class)
 	public void masDe10Test() {
-		Nota miNota = new Nota(12);
+		
 	}
 	
 	
