@@ -18,6 +18,20 @@ public class Punto {
 		return y;
 	}
 	
+	public boolean estaSobreEjeX() {
+		return this.getY() == 0;
+	}
+	
+	public boolean estaSobreEjeY() {
+		return this.getX() == 0;
+	}
+	
+	public boolean esElOrigen() {
+		return estaSobreEjeX() && estaSobreEjeY();
+	}
+
+
+	
 	public double getDistanciaAlOrigen() {
 		//return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 		//return Math.hypot(this.getX(), this.getY());

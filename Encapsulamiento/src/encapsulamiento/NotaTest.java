@@ -42,5 +42,31 @@ public class NotaTest {
 		Nota miNota = new Nota(2);
 		assertFalse(miNota.aprobado());
 	}
+	@Test
+	public void desaprobado3ValorTest() {
+		Nota miNota = new Nota(3);
+		assertFalse(miNota.aprobado());
+	}
+	
+	@Test
+	public void recupera3Test() {
+		Nota miNota = new Nota(3);
+		miNota.recuperar(8);
+		assertTrue(miNota.aprobado());
+	}
+	
+	@Test
+	public void recupera4Test() {
+		Nota miNota = new Nota(4);
+		miNota.recuperar(2);
+		assertTrue(miNota.aprobado());
+	}
+	
+	@Test
+	public void recupera2Test() {
+		Nota miNota = new Nota(2);
+		miNota.recuperar(2);
+		assertFalse(miNota.aprobado());
+	}
 
 }
