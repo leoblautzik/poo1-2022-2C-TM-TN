@@ -1,5 +1,7 @@
 package figuras;
 
+import circulos.Punto;
+
 public class Circulo {
 	//atributo
 	private double diametro;
