@@ -16,6 +16,13 @@ public class TarjetaBajaTest {
 		assertNotNull(otraTarjeta);
 		assertEquals(500, otraTarjeta.obtenerSaldo(), 0);
 	}
+	@Test
+	public void viajarEnColectivoTest() {
+		TarjetaBaja miTarjeta = new TarjetaBaja(100);
+		miTarjeta.pagarViajeEnColectivo();
+		double esperado = 100 - 21.50;
+		assertEquals(esperado, miTarjeta.obtenerSaldo(), 0);
+	}
 	
 	@Test(expected=Error.class)
 	public void creoUnaTarjetaMontoInvalidoTest() {

@@ -18,6 +18,11 @@ public class Circulo {
 	private void setDiametro(double diametro) {
 		this.diametro = diametro;
 	}
+	
+	protected void setRadio(double nuevoRadio) {
+		this.setDiametro(nuevoRadio * 2);
+	}
+	
 	public double getRadio() {
 		return getDiametro() / 2;
 	}
