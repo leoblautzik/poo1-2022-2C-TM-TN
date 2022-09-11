@@ -1,10 +1,8 @@
 package figuras;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import circulos.Punto;
 
 public class PuntoTest {
 
@@ -48,6 +46,4 @@ public class PuntoTest {
 	}
 	
 	
-	
-
 }
