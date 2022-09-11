@@ -1,4 +1,4 @@
-package figuras;
+package circulos;
 
 public class Punto {
 	

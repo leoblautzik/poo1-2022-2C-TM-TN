@@ -1,7 +1,8 @@
 package figuras;
 
+
 public class Circulo {
-	//atributo
+	
 	private double diametro;
 	private Punto centro;
 	
