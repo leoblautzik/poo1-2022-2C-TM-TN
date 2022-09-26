@@ -3,7 +3,6 @@ package videoClub;
 public class Pelicula extends Video {
 
 	private int anio;
-
 	private String director;
 
 	public Pelicula(String titulo, String genero, int anio, String director) {
