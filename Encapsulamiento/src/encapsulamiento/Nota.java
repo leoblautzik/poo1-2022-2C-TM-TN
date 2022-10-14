@@ -70,34 +70,42 @@ public class Nota implements Comparable<Nota> {
 		 * if(this.obtenerValor() < o.obtenerValor()) return -1; else
 		 * if(this.obtenerValor() > o.obtenerValor()) return 1; else return 0;
 		 */
-		
+
 		return -1 * Integer.compare(this.obtenerValor(), o.obtenerValor());
-		
-		//return this.obtenerValor().compareTo(o.obtenerValor());
-		
+
+		// return this.obtenerValor().compareTo(o.obtenerValor());
+
 	}
 
-	
 	public static void main(String[] args) {
-		Nota [] notas = new Nota[4];
-		notas[0] =  new Nota(10);
-		notas[1] =  new Nota(6);
-		notas[2] =  new Nota(7);
-		notas[3] =  new Nota(9);
-		
-		for (Nota cadaNota : notas) {
-			System.out.println(cadaNota.valorNota + " Aprobado: " + cadaNota.aprobado());
-		}
-		
-		Arrays.sort(notas);
-		System.out.println( "");
-		for (Nota cadaNota : notas) {
-			System.out.println(cadaNota.valorNota + " Aprobado: " + cadaNota.aprobado());
-		}
-		
-		
-	}
-	
 
+		Nota[] notas = new Nota[4];
+
+		/*
+		 * for(int i = 0; i < notas.length; i++ ) notas[i] = new Nota(i);
+		 */
+
+		for (Nota cadaNota : notas)
+			cadaNota = new Nota(4);
+
+		System.out.println(notas[3].obtenerValor());
+
+	}
+
+	/*
+	 * public static void main(String[] args) { Nota [] notas = new Nota[4];
+	 * notas[0] = new Nota(10); notas[1] = new Nota(6); notas[2] = new Nota(7);
+	 * notas[3] = new Nota(9);
+	 * 
+	 * for (Nota cadaNota : notas) { System.out.println(cadaNota.valorNota +
+	 * " Aprobado: " + cadaNota.aprobado()); }
+	 * 
+	 * Arrays.sort(notas); System.out.println( ""); for (Nota cadaNota : notas) {
+	 * System.out.println(cadaNota.valorNota + " Aprobado: " + cadaNota.aprobado());
+	 * }
+	 * 
+	 * 
+	 * }
+	 */
 
 }
