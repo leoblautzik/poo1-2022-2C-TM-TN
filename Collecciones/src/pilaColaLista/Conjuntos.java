@@ -6,9 +6,9 @@ import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
 
-public class Conjumtos {
+public class Conjuntos {
 
-	public static List<Integer> eliminarRepetidos(List<Integer> listaConRepetidos) {
+	public List<Integer> eliminarRepetidos(List<Integer> listaConRepetidos) {
 
 		Set<Integer> setAux = new TreeSet<Integer>();
 		List<Integer> listaAux = new ArrayList<Integer>();
@@ -55,8 +55,10 @@ public class Conjumtos {
 
 	public static void main(String[] args) {
 		
+		Conjuntos c = new Conjuntos();
+		
 		List<Integer> listaConRepetidos = generarListaAleatoria();
-		List<Integer> listaSinRepetidos = eliminarRepetidos(listaConRepetidos);
+		List<Integer> listaSinRepetidos = c.eliminarRepetidos(listaConRepetidos);
 		List<Integer> listaInvertida = 	invertirLista(listaSinRepetidos);
 		
 		System.out.println(listaSinRepetidos);

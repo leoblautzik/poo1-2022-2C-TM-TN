@@ -71,7 +71,7 @@ public class Nota implements Comparable<Nota> {
 		 * if(this.obtenerValor() > o.obtenerValor()) return 1; else return 0;
 		 */
 
-		return -1 * Integer.compare(this.obtenerValor(), o.obtenerValor());
+		return Integer.compare(this.obtenerValor(), o.obtenerValor());
 
 		// return this.obtenerValor().compareTo(o.obtenerValor());
 
@@ -81,12 +81,14 @@ public class Nota implements Comparable<Nota> {
 
 		Nota[] notas = new Nota[4];
 
-		/*
-		 * for(int i = 0; i < notas.length; i++ ) notas[i] = new Nota(i);
-		 */
+		
+		  for(int i = 0; i < notas.length; i++ ) 
+			  notas[i] = new Nota(4);
+		 
 
-		for (Nota cadaNota : notas)
-			cadaNota = new Nota(4);
+		/*
+		 * for (Nota cadaNota : notas) cadaNota = new Nota(4);
+		 */
 
 		System.out.println(notas[3].obtenerValor());
 
