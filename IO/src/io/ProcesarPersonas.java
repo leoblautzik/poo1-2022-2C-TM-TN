@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,13 +21,12 @@ public class ProcesarPersonas {
 	 */
 	public static List<Persona> getPersonas(String archivo) {
 
-		List<Persona> aux = new LinkedList<Persona>();
+		List<Persona> personas = new LinkedList<Persona>();
 		try {
 
 			FileReader fr = new FileReader(new File(archivo));
 			BufferedReader br = new BufferedReader(fr);
 			String linea;
-			
 			String datos[];
 			int dni;
 			String apellido;
@@ -40,9 +40,10 @@ public class ProcesarPersonas {
 				apellido = datos[1];
 				edad = Integer.parseInt(datos[2]);
 				p = new Persona(dni, apellido, edad);
-				aux.add(p);
+				personas.add(p);
 				linea = br.readLine();
 			}
+			
 			fr.close();
 
 		} catch (FileNotFoundException fnfo) {
@@ -53,7 +54,7 @@ public class ProcesarPersonas {
 
 		} 		
 		
-		return aux;
+		return personas;
 	}
 	
 	/*Implementar un método estático getPersonasMayoresAEdad que 
@@ -89,21 +90,12 @@ public class ProcesarPersonas {
 		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		List<Persona> listaPersonas = getPersonas("personas.in");
 		List<Persona> personasMayores = getPersonasMayoresAEdad(listaPersonas, 30);
-		
-		try {
-			guardarListadoDePersonas(personasMayores, "PersonasMayoresDe30.out");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	
-		
-		
+		Collections.sort(personasMayores, new DNIComparator());
+		guardarListadoDePersonas(personasMayores, "mayores28-10.out");
+				
 	}
 
 }

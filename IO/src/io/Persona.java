@@ -13,6 +13,22 @@ public class Persona implements Comparable<Persona>{
 		this.edad = edad;
 	}
 
+	protected int getDni() {
+		return dni;
+	}
+
+	protected void setDni(int dni) {
+		this.dni = dni;
+	}
+
+	protected String getApellido() {
+		return apellido;
+	}
+
+	protected void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
 	protected int getEdad() {
 		return edad;
 	}
