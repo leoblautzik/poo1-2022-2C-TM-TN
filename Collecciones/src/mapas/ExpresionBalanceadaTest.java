@@ -36,9 +36,16 @@ public class ExpresionBalanceadaTest {
 	}
 	
 	@Test
-	public void enunciadoMalignoDesBalanceadoTest() {
+	public void enunciadoMalignoDesBalanceadoAlFinalTest() {
 		ExpresionBalanceada eb = new ExpresionBalanceada();
 		String expresion = "[()]{}{[()()]()}(";
+		assertFalse(eb.estaBalanceada(expresion));
+	}
+	
+	@Test
+	public void enunciadoMalignoDesBalanceadoAlInicioTest() {
+		ExpresionBalanceada eb = new ExpresionBalanceada();
+		String expresion = "{[()]{}{[()()]()}";
 		assertFalse(eb.estaBalanceada(expresion));
 	}
 	@Test

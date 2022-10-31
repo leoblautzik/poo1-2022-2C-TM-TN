@@ -1,6 +1,6 @@
 package io;
 
-public class Persona implements Comparable<Persona>{
+public class Persona {
 	
 	private int dni;
 	private String apellido;
@@ -38,10 +38,7 @@ public class Persona implements Comparable<Persona>{
 		return dni + ", " + apellido + ", " + edad;
 	}
 
-	@Override
-	public int compareTo(Persona o) {
-		return this.apellido.compareTo(o.apellido);
-	}
+	
 	
 	
 

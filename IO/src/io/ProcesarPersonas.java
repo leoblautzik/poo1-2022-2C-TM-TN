@@ -93,7 +93,7 @@ public class ProcesarPersonas {
 	public static void main(String[] args) throws FileNotFoundException {
 		List<Persona> listaPersonas = getPersonas("personas.in");
 		List<Persona> personasMayores = getPersonasMayoresAEdad(listaPersonas, 30);
-		Collections.sort(personasMayores, new DNIComparator());
+		Collections.sort(personasMayores, Collections.reverseOrder(new DNIComparator()));
 		guardarListadoDePersonas(personasMayores, "mayores28-10.out");
 				
 	}

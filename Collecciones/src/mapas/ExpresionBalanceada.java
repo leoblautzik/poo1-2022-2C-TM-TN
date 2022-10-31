@@ -7,39 +7,35 @@ import java.util.Set;
 import java.util.Stack;
 
 public class ExpresionBalanceada {
-	
+
 	public boolean estaBalanceada(String expresion) {
-		
+
 		Stack<Character> pila = new Stack<Character>();
-		Set<Character> set = new HashSet<Character>();
-		Map<Character, Character> mapita = new HashMap<Character, Character>();
-		
-		set.add('{');
-		set.add('[');
-		set.add('(');
-		
-		mapita.put('}', '{');
-		mapita.put(']', '[');
-		mapita.put(')', '(');
-		
-		for(int i = 0; i < expresion.length(); i++) {
-			Character signo = expresion.charAt(i);
-			if(set.contains(signo))
-				pila.push(signo);
-			else {
-				if(pila.isEmpty())
-					return false;
-				
-				Character ultimoApilado = pila.pop();
-				Character aperturaDeSigno = mapita.get(signo);
-				if(ultimoApilado != aperturaDeSigno)
+		Set<Character> conjunto = new HashSet<Character>();
+		Map<Character, Character> mapa = new HashMap<Character, Character>();
+
+		conjunto.add('{');
+		conjunto.add('[');
+		conjunto.add('(');
+
+		mapa.put('}', '{');
+		mapa.put(']', '[');
+		mapa.put(')', '(');
+		Character leido;
+
+		for (int i = 0; i < expresion.length(); i++) {
+
+			leido = expresion.charAt(i);
+			if (conjunto.contains(leido)) {
+				pila.push(leido);
+			} else {
+				if (pila.isEmpty() ||  pila.pop() != mapa.get(leido))
 					return false;
 			}
 		}
-				
+
 		return pila.isEmpty();
+
 	}
-	
-	
 
 }
