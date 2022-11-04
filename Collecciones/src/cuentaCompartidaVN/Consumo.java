@@ -1,10 +1,6 @@
-package cuentaCompartida;
+package cuentaCompartidaVN;
 
 public class Consumo {
-	
-	
-	  @Override public String toString() { return descripcion + "     " + precio; }
-	 
 
 	private String descripcion;
 	private double precio;
@@ -21,6 +17,11 @@ public class Consumo {
 
 	protected double getPrecio() {
 		return precio;
+	}
+	
+	@Override
+	public String toString() {
+		return descripcion + "     " + precio;
 	}
 
 }

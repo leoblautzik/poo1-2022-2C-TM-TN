@@ -23,7 +23,6 @@ public class Entrenadores {
 					listaAux.add(entrenador);
 					aux.put(cadaSocio, listaAux);
 				}
-
 			}
 		}
 

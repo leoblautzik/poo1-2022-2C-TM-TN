@@ -13,6 +13,7 @@ public class CuentaCompartida {
 
 	public CuentaCompartida(int n, double cubierto) {
 		this.cubierto = cubierto;
+		
 		this.cuenta = new ArrayList<List<Consumo>>();
 		for (int i = 0; i < n; i++) {
 			cuenta.add(new ArrayList<Consumo>());
