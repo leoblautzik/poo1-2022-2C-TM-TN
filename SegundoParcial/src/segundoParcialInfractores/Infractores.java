@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.PriorityQueue;
 
 public class Infractores {
 
@@ -46,14 +47,22 @@ public class Infractores {
 		fr.close();
 	}
 
+	// Version donde se imprime de mayor a menor importe de multa. 
 	public void escribirMultados(String archivoDeSalida) throws IOException {
 		PrintWriter salida = new PrintWriter(new FileWriter(archivoDeSalida));
+		PriorityQueue<Multado> colaDePrioridad = new PriorityQueue<Multado>();
+		String patente;
+		Integer infracciones;
 		for (Entry<String, Integer> cu : infractores.entrySet()) {
-			String key = cu.getKey();
-			Integer val = cu.getValue();
+			patente = cu.getKey();
+			infracciones = cu.getValue();
+			colaDePrioridad.offer(new Multado(patente, infracciones * 50000));
+		}
+		
+		while(!colaDePrioridad.isEmpty()) {
+			Multado aux = colaDePrioridad.poll();
+			salida.println(aux); 
 			
-			salida.println(key + " " + (val * 50000));
-
 		}
 		salida.close();
 

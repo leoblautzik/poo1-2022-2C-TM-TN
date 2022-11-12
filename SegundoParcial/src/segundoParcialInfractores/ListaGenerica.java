@@ -94,6 +94,7 @@ public class ListaGenerica<T> {
 		ListaGenerica<Integer> lgI = new ListaGenerica<Integer>();
 
 		System.out.println(lgI.diferenciaSimetrica(l1, l2));
+		System.out.println(lgI.union(l1, l2));
 		System.out.println(lgI.unionS(l1, l2));
 		
 		
